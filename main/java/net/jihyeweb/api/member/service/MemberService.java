@@ -13,9 +13,12 @@ package net.jihyeweb.api.member.service;
  */
 public interface MemberService {
     String membershipList();
-    String  membershipInformation();
+    String membershipInformation();
     String shipmentList();
     String registerMail();
     String moneyList();
     String accumulatedMoney();
+    String calc();
+    String bmi();
+    String grade();
 }
