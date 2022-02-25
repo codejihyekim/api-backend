@@ -59,4 +59,9 @@ public class MemberServiceImpl implements MemberService{
     public String grade() {
         return null;
     }
+
+    @Override
+    public String login() {
+        return null;
+    }
 }

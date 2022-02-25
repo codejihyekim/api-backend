@@ -21,4 +21,5 @@ public interface MemberService {
     String calc();
     String bmi();
     String grade();
+    String login();
 }
