@@ -1,5 +1,9 @@
 package net.jihyeweb.api.member.service;
 
+import lombok.RequiredArgsConstructor;
+import net.jihyeweb.api.member.domain.CalcDTO;
+import net.jihyeweb.api.member.domain.MemberDTO;
+import net.jihyeweb.api.member.repository.MemberRepository;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,54 +18,27 @@ import org.springframework.stereotype.Service;
  * 2022-02-11         codejihyekim      최초 생성
  */
 @Service
+@RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService{
+    private final MemberRepository repository;
+
     @Override
-    public String membershipList() {
-        return null;
+    public String calc(CalcDTO calc) {
+        return repository.calc(calc);
     }
 
     @Override
-    public String membershipInformation() {
-        return null;
+    public String bmi(MemberDTO bmi) {
+        return repository.bmi(bmi);
     }
 
     @Override
-    public String shipmentList() {
-        return null;
+    public String grade(MemberDTO grade) {
+        return repository.grade(grade);
     }
 
     @Override
-    public String registerMail() {
-        return null;
-    }
-
-    @Override
-    public String moneyList() {
-        return null;
-    }
-
-    @Override
-    public String accumulatedMoney() {
-        return null;
-    }
-
-    @Override
-    public String calc() {
-        return null;
-    }
-
-    @Override
-    public String bmi() {
-        return null;
-    }
-
-    @Override
-    public String grade() {
-        return null;
-    }
-
-    @Override
-    public String login() {
-        return null;
+    public String login(MemberDTO login) {
+        return repository.login(login);
     }
 }

@@ -1,5 +1,8 @@
 package net.jihyeweb.api.member.service;
 
+import net.jihyeweb.api.member.domain.CalcDTO;
+import net.jihyeweb.api.member.domain.MemberDTO;
+
 /**
  * packageName: net.jihyeweb.api.member.service
  * fileName        : MemberService
@@ -12,14 +15,12 @@ package net.jihyeweb.api.member.service;
  * 2022-02-11         codejihyekim      최초 생성
  */
 public interface MemberService {
-    String membershipList();
-    String membershipInformation();
-    String shipmentList();
-    String registerMail();
-    String moneyList();
-    String accumulatedMoney();
-    String calc();
-    String bmi();
-    String grade();
-    String login();
+
+    String calc(CalcDTO calc);
+
+    String bmi(MemberDTO bmi);
+
+    String grade(MemberDTO grade);
+
+    String login(MemberDTO login);
 }

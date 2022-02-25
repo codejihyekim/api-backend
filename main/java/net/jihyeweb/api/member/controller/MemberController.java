@@ -1,6 +1,7 @@
 package net.jihyeweb.api.member.controller;
 
 import lombok.RequiredArgsConstructor;
+import net.jihyeweb.api.member.domain.CalcDTO;
 import net.jihyeweb.api.member.domain.MemberDTO;
 import net.jihyeweb.api.member.service.MemberService;
 import org.springframework.web.bind.annotation.*;
@@ -23,36 +24,16 @@ public class MemberController {
 
     private final MemberService service;
 
-    @PostMapping("/bmi")
-    public String getBmi(@RequestBody MemberDTO member){
-        System.out.println(" 리액트에서 넘어온 이름: "+member.getName());
-        System.out.println(" 리액트에서 넘어온 키: "+member.getHeight());
-        System.out.println(" 리액트에서 넘어온 몸무게: "+member.getWeight());
-        return "BMI 는 정상";
+    public String calc(@RequestBody CalcDTO calc){
+       return service.calc(calc);
     }
-    @PostMapping("/grade")
-    public String getGrade(@RequestBody MemberDTO member){
-        System.out.println(" 리액트에서 넘어온 이름: "+member.getName());
-        System.out.println(" 리액트에서 넘어온 키: "+member.getHeight());
-        System.out.println(" 리액트에서 넘어온 몸무게: "+member.getWeight());
-        return "BMI 는 정상";
+    public String bmi(@RequestBody MemberDTO bmi) {
+        return service.bmi(bmi);
     }
-    @GetMapping("/calc")
-    public String calc(@PathVariable String name,
-                           @PathVariable double height,
-                           @PathVariable double weight){
-        System.out.println(" 리액트에서 넘어온 이름: "+name);
-        System.out.println(" 리액트에서 넘어온 키: "+height);
-        System.out.println(" 리액트에서 넘어온 몸무게: "+weight);
-        return "BMI 는 정상";
+    public String grade(@RequestBody MemberDTO grade){
+        return service.grade(grade);
     }
-    @GetMapping("/login")
-    public String login(@PathVariable String name,
-                           @PathVariable double height,
-                           @PathVariable double weight){
-        System.out.println(" 리액트에서 넘어온 이름: "+name);
-        System.out.println(" 리액트에서 넘어온 키: "+height);
-        System.out.println(" 리액트에서 넘어온 몸무게: "+weight);
-        return "BMI 는 정상";
+    public String login(@RequestBody MemberDTO login){
+        return service.login(login);
     }
 }
