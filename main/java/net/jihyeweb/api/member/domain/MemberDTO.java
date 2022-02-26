@@ -25,6 +25,9 @@ public class MemberDTO {
     private double height;
     private double weight;
     private String regdate;
-
+    private int korscore;
+    private int engscore;
+    private int mathscore;
+    private String password;
 
 }
